@@ -39,5 +39,5 @@ if (!cmd) {
 
 switch (cmd) {
   default:
-    console.warn(chalk.yellow('Not implemented yet'));
+    console.warn(chalk.yellow('Command "%s" not implemented yet.'),cmd);
 }
