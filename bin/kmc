@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var chalk = require('chalk');
+var table = require('text-table');
+
+program
+  .version(require('../package').version)
+  .usage('<command> [package] [options]');
+
+//TODO: read these dynamically from modules
+var cmds = [
+  {cmd: 'install [name ...]',   desc: 'Install one or more mods'},
+  {cmd: 'uninstall [name ...]', desc: 'Uninstall one or more mods'},
+  {cmd: 'search [name]',        desc: 'Search for a package'},
+  {cmd: 'home [name]',          desc: 'Open a mods homepage'},
+  {cmd: 'info [name]',          desc: 'Show info about a mod'},
+  {cmd: 'list',                 desc: 'List installed mods'},
+  {cmd: 'refresh',              desc: 'Refresh package index'},
+];
+program.on('--help', function(){
+  console.log('  Commands:');
+  console.log(table(cmds.map(function(cmd) {
+    return ['    ' + chalk.blue(cmd.cmd), cmd.desc];
+  })));
+
+});
+
+
+program.parse(process.argv);
+
+
+var cmd = program.args[0];
+
+if (!cmd) {
+  program.help();
+  process.exit(0);
+}
+
+switch (cmd) {
+  default:
+    console.warn(chalk.yellow('Not implemented yet'));
+}

@@ -1,8 +1,25 @@
 {
   "name": "kerbal-mod-controller",
   "version": "0.1.0",
+  "author": "Ulysse Carion <ulyssecarion@gmail.com>",
+  "contributors": [
+    "José Luis Salvador Rufo",
+    "Aaron Lampros <alampros@gmail.com>"
+  ],
+  "main": "index.js",
+  "bin": {
+    "kmc": "bin/kmc"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "commander": "^2.3.0",
+    "lodash": "^2.4.1",
+    "text-table": "^0.2.0"
+  },
   "devDependencies": {
+    "chalk": "^0.5.1",
     "grunt": "~0.4.5",
-    "grunt-docco": "~0.3.3"
+    "grunt-docco": "~0.3.3",
+    "matchdep": "~0.3.0"
   }
 }
